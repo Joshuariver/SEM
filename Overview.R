@@ -88,7 +88,8 @@ anova(config, weak, strong, strict)
 # 개별 모델들에 대한 CFI 인덱스가 ANOVA 에서는 나오지 않으므로 별도로 분석해야 함. 
 # - Tutorial 방식
 
-measurementInvariance(model=model,data=HolzingerSwineford1939,group="school")
+# measurementInvariance(model=model,data=HolzingerSwineford1939,group="school")
+cat(as.character(measEq.syntax(configural.model=model,data=HolzingerSwineford1939,group="school")))
 
 
 ############################################################################
@@ -161,5 +162,5 @@ c("x3 ~1", "x7~1"))
 # 가장 크다는 것을 알 수 있다.- Tutorial 방식
 mod_strong<-modificationIndices(strong)
 mod_strong[mod_strong$op == "~1",]
-measurementInvariance(model=model,data=HolzingerSwineford1939,group="school", group.partial =c("x3 ~1", "x7~1"))
+cat(as.character(measEq.syntax(configural.model=model,data=HolzingerSwineford1939,group="school", group.partial =c("x3 ~1", "x7~1"))))
 
